@@ -6,18 +6,23 @@ import {RouterModule} from "@angular/router";
 import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard/dashboard.component";
 import {RevenueexRoutingModule} from "./app-routing.module";
+import {RevenueTrendComponent} from "./dashboard/revenue-trend/revenue-trend.component";
+import {ChartsModule} from "ng2-charts/ng2-charts";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    RevenueTrendComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule,
-    RevenueexRoutingModule
+    RevenueexRoutingModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
