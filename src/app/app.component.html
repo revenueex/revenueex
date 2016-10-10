@@ -11,7 +11,8 @@
                                                               class="hidden" alt=""></span>
       <div class="desktop forceHeaderLayout" data-aura-rendered-by="143:2;a">
         <div class="bLeft" data-aura-rendered-by="144:2;a">
-          <div class="desktop oneAppNavToggle" [ngClass]="sideBarStatus" (click)="toggleSideBar()" data-aura-class="oneAppNavToggle">
+          <div class="desktop oneAppNavToggle" [ngClass]="sideBarStatus" (click)="toggleSideBar()"
+               data-aura-class="oneAppNavToggle">
             <a
               class="toggleNav desktop forceIconDeprecated forceHeaderButton" title="Toggle SideBar"
               href="javascript:void(0);" data-aura-rendered-by="152:2;a"
@@ -387,7 +388,8 @@
         <!--render facet: 514:2;a--></div>
       <div class="bBottom" data-aura-rendered-by="516:2;a"><!--render facet: 517:2;a--></div>
     </header>
-    <div class="desktop oneStageLeft" [ngClass]="sideBarStatus" aria-hidden="false" tabindex="-1" data-aura-rendered-by="520:2;a"
+    <div class="desktop oneStageLeft" [ngClass]="sideBarStatus" aria-hidden="false" tabindex="-1"
+         data-aura-rendered-by="520:2;a"
          data-aura-class="oneStageLeft" style="top: 60px; height: calc(100% - 60px); width : 400px">
       <div class="content" data-aura-rendered-by="521:2;a"><!--render facet: 567:2;a-->
         <div style="" data-aura-rendered-by="569:2;a" class="uiScroller scroller-wrapper scroll-vertical native"
@@ -852,10 +854,27 @@
         </div>
       </div>
     </div>
-    <section class="stage panelSlide" data-aura-rendered-by="572:2;a" style="top: 60px; height: calc(100% - 60px);">
+    <section class="stage panelSlide {{ sideBarStatus != 'hidden' ? 'swiped' : ''}}" data-aura-rendered-by="572:2;a"
+             style="top: 60px; height: calc(100% - 60px);">
       <!--render facet: 575:2;a--><!--render facet: 577:2;a--><!--render facet: 584:2;a--><!--render facet: 587:2;a-->
       <!--render facet: 596:2;a-->
-      <div class="mask oneCenterStage" data-aura-rendered-by="597:2;a" data-aura-class="oneCenterStage"></div>
+      <div class="center oneCenterStage" data-aura-rendered-by="597:2;a" data-aura-class="oneCenterStage">
+        <div class="content" data-aura-rendered-by="590:2;a">
+          <div class="active oneContent" data-aura-rendered-by="40:1;0" data-aura-class="oneContent">
+            <div class="container homeLanding" data-aura-rendered-by="44:1;0" data-aura-class="homeLanding">
+              <div>
+                <div class="responsiveContents homeDesktopTemplate" data-aura-rendered-by="3:2799;a"
+                     data-aura-class="homeDesktopTemplate">
+                  <div class="colMain">
+                    <router-outlet></router-outlet>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--render facet: 49:1;0-->
+          </div>
+        </div>
+      </div>
       <div class="indicator  hideEl forceInlineSpinner oneCenterStage" aria-hidden="true" role="alert"
            data-aura-rendered-by="600:2;a" data-aura-class="forceInlineSpinner oneCenterStage">
         <div class="loading forceLoadingLaser" data-aura-rendered-by="604:2;a" data-aura-class="forceLoadingLaser">

@@ -38600,3 +38600,16 @@ a.uiButton--inverse:focus {
   padding: 0;
   border-radius: .25rem
 }
+
+.bottom-bar {
+  border-bottom: 3px solid rgb(0, 112, 210);
+}
+
+.toggle-button {
+  font-size: .75rem;
+  line-height: 1.2rem;
+}
+
+.button-pressed {
+  background-color: rgb(216, 221, 230);
+}
