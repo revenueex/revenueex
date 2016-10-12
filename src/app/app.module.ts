@@ -7,7 +7,6 @@ import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard/dashboard.component";
 import {RevenueexRoutingModule} from "./app-routing.module";
 import {RevenueTrendComponent} from "./dashboard/revenue-trend/revenue-trend.component";
-import {ChartsModule} from "ng2-charts/ng2-charts";
 
 
 @NgModule({
@@ -21,8 +20,7 @@ import {ChartsModule} from "ng2-charts/ng2-charts";
     FormsModule,
     HttpModule,
     RouterModule,
-    RevenueexRoutingModule,
-    ChartsModule
+    RevenueexRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
