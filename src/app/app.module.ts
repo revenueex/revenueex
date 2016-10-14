@@ -7,13 +7,19 @@ import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard/dashboard.component";
 import {RevenueexRoutingModule} from "./app-routing.module";
 import {RevenueTrendComponent} from "./dashboard/revenue-trend/revenue-trend.component";
+import { ForecastOrderGapComponent } from './dashboard/forecast-order-gap/forecast-order-gap.component';
+import { RevenueRealizedComponent } from './dashboard/revenue-realized/revenue-realized.component';
+import { RevenueRealizationRateComponent } from './dashboard/revenue-realization-rate/revenue-realization-rate.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    RevenueTrendComponent
+    RevenueTrendComponent,
+    ForecastOrderGapComponent,
+    RevenueRealizedComponent,
+    RevenueRealizationRateComponent
   ],
   imports: [
     BrowserModule,

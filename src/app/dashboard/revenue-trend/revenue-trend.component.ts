@@ -37,6 +37,12 @@ export class RevenueTrendComponent implements OnInit {
       type: "mixed",
       utc: true,
       backgroundColor: "white",
+      "title": {
+        "text": "Revenue Trend",
+        "height": "20px",
+        "font-weight": "normal",
+        "text-color": "#ffffff"
+      },
       plot: {
         "data-min": [47, 43, 46, 50, 55, 54, 51, 53, 58, 58, 62, 65, 55, 51, 53, 58, 61, 57, 57, 54, 52, 54, 51, 53, 57, 60, 61, 60, 63, 62, 63],
         "data-max": [56, 61, 67, 74, 82, 70, 72, 72, 64, 74, 77, 87, 73, 71, 71, 70, 81, 68, 75, 69, 62, 79, 68, 74, 77, 76, 74, 78, 80, 78, 79],
@@ -125,7 +131,7 @@ export class RevenueTrendComponent implements OnInit {
     zingchart.render({
       id: 'chart-revenue-trend-dashboard',
       data: myConfig,
-      height: 340,
+      height: 400,
       width: "100%"
     });
   }
