@@ -18,6 +18,7 @@
         "styles.css"
       ],
       "scripts": [
+        "../node_modules/zingchart/client/zingchart.min.js"
       ],
       "environments": {
         "source": "environments/environment.ts",
