@@ -37,11 +37,13 @@ export class RevenueTrendComponent implements OnInit {
       type: "mixed",
       utc: true,
       backgroundColor: "white",
-      "title": {
-        "text": "Revenue Trend",
-        "height": "20px",
-        "font-weight": "normal",
-        "text-color": "#ffffff"
+      title: {
+        text: "Revenue Trend",
+        fontColor: "#5f5f5f",
+        backgroundColor: "transparent",
+        textAlign: "center",
+        padding: "15px 15px",
+        fontSize: "14px"
       },
       plot: {
         "data-min": [47, 43, 46, 50, 55, 54, 51, 53, 58, 58, 62, 65, 55, 51, 53, 58, 61, 57, 57, 54, 52, 54, 51, 53, 57, 60, 61, 60, 63, 62, 63],

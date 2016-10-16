@@ -38613,3 +38613,7 @@ a.uiButton--inverse:focus {
 .button-pressed {
   background-color: rgb(216, 221, 230);
 }
+
+.slds-icon-text-success {
+  fill: rgb(4, 132, 75)
+}

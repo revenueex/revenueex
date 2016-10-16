@@ -14,13 +14,8 @@ export class ForecastOrderGapComponent implements OnInit {
   }
 
   ngOnInit() {
-    var primaryColor = "#4184F3";
-    var primaryColorHover = "#3a53c5";
-    var secondaryColor = '#DCDCDC'
-    var scaleTextColor = '#999';
-
     var chartConfig = {
-        "type": "hbar3d",
+        "type": "hbar",
         "plot": {
           "stacked": true,
           "animation": {
@@ -36,8 +31,13 @@ export class ForecastOrderGapComponent implements OnInit {
           "y-angle": 10,
           "depth": 30
         },
-        "title": {
-          "text": "My Title"
+        title: {
+          text: "Forecast Order Gap",
+          fontColor: "#5f5f5f",
+          backgroundColor: "transparent",
+          textAlign: "center",
+          padding: "15px 15px",
+          fontSize: "14px"
         },
         "legend": {
           "layout": "float",
@@ -47,23 +47,18 @@ export class ForecastOrderGapComponent implements OnInit {
             "font-color": "#333"
           }
           ,
-          "x": "37%",
+          "x": "20%",
           "y": "90%",
           "width": "90%",
           "shadow": 0
-        }
-        ,
-        "globals": {
-          "fontFamily": "Roboto"
-        }
-        ,
+        },
         "backgroundColor": "#fff",
         "scaleX": {
           "values": [
-            "Customer1",
-            "Customer2",
-            "Customer3",
-            "Customer4"
+            "C1",
+            "C2",
+            "C3",
+            "C4"
           ],
           "lineWidth": 0,
           "lineColor": "none",
@@ -116,8 +111,8 @@ export class ForecastOrderGapComponent implements OnInit {
               120
             ],
             "alpha": 1,
-            "text": "Orders",
-            "background-color": "#4184f3",
+            "text": "Forecasts",
+            "background-color": "#53bbd4",
             "hover-state": {
               backgroundColor: '#2956A0'
             }
@@ -130,12 +125,12 @@ export class ForecastOrderGapComponent implements OnInit {
               165
             ],
             "alpha": 1,
-            "text": "Forecasts",
-            "background-color": "#f4b400",
+            "text": "Orders",
+            "background-color": "#18aa4a",
             "border-radius-top-left": "3px",
             "border-radius-top-right": "3px",
             "hover-state": {
-              backgroundColor: '#8C6A0B'
+              backgroundColor: '#18aa4a'
             }
           },
           {
@@ -147,7 +142,7 @@ export class ForecastOrderGapComponent implements OnInit {
             ],
             "alpha": 1,
             "text": "Gap",
-            "background-color": "#db4437",
+            "background-color": "#fe6c00",
             "hover-state": {
               backgroundColor: '#901E15'
             }

@@ -12,335 +12,415 @@ export class RevenueRealizedComponent implements OnInit {
   constructor() {
   }
 
+  getAverageWinRate() {
+    //windRate
+    let winRate: number = 0.21;
+    let data: number[] = [];
+    for (let i = 0; i < 10; i++) {
+
+      data.push(2 + i * winRate);
+    }
+    return data;
+  }
+
+
   ngOnInit() {
     zingchart.THEME = "classic";
     var myConfig = {
-      "background-color": "white",
-      "graphset": [
-        {
-          "type": "gauge",
-          "scale-r": {
-            "aperture": 200,
-            "values": "0:100:20",
-            "center": {
-              "size": 5,
-              "background-color": "#66CCFF #FFCCFF",
-              "border-color": "none"
+        "background-color": "white",
+        "graphset": [
+          {
+            "type": "gauge",
+            "width": "50%",
+            title: {
+              text: "Revenue Realized",
+              fontColor: "#5f5f5f",
+              backgroundColor: "transparent",
+              textAlign: "center",
+              padding: "0px 15px",
+              fontSize: "14px"
             },
-            "ring": {
-              "size": 10,
-              "rules": [
-                {
-                  "rule": "%v >= 0 && %v <= 20",
-                  "background-color": "red"
-                },
-                {
-                  "rule": "%v >= 20 && %v <= 40",
-                  "background-color": "orange"
-                },
-                {
-                  "rule": "%v >= 40 && %v <= 60",
-                  "background-color": "yellow"
-                },
-                {
-                  "rule": "%v >= 60 && %v <= 80",
-                  "background-color": "green"
-                },
-                {
-                  "rule": "%v >= 80 && %v <=100",
-                  "background-color": "blue"
+            "plotarea": {
+              "y": 0,
+              height: "150%"
+            },
+            "scale-r": {
+              "aperture": 200,
+              "values": "0:100:20",
+              labels: ['', '', '', '', '', ''],
+              tick: {
+                visible: false
+              },
+              "center": {
+                "size": 5,
+                "background-color": "#66CCFF #FFCCFF",
+                "border-color": "none"
+              }
+              ,
+              "plotarea": {
+                "margin": "0px 0px 0px 0px"
+              }
+              ,
+              "plot": {
+                "value-box": {
+                  "visible": false
                 }
-              ]
-            },
-            "guide": { //Specify your gauge chart's background color(s).
-              "background-color": "#66CCFF #FFCCFF",
-              "alpha": 0.2
-            }
-          },
-          "plot": {
-            "csize": "5%",
-            "size": "100%",
-            "background-color": "#000000"
-          },
-          "series": [
-            {"values": [87]}
-          ]
-        },
-        {
-          "type": "pie",
-          "width": "34%",
-          "x": "66%",
-          "background-color": "white",
-          "title": {
-            "background-color": "none",
-            "font-weight": "normal",
-            "font-family": "Arial",
-            "font-color": "#ffffff",
-            "height": "40px"
-          },
-          "plotarea": {
-            "margin": "60px 10px 0px 0px"
-          },
-          "plot": {
-            "value-box": {
-              "visible": false
-            },
-            "animation": {
-              "delay": 0,
-              "effect": 2,
-              "speed": "300",
-              "method": "0",
-              "sequence": "1"
-            }
-          },
-          "series": [
-            {
-              "text": "Product 1",
-              "values": [
-                15
-              ],
-              "background-color": "#57dce5",
-              "border-color": "#454754",
-              "border-width": "1px",
-              "shadow": 0,
-              "tooltip": {
-                "background-color": "#54ced4",
-                "font-color": "#454754",
-                "border-radius": "6px",
-                "shadow": false,
-                "padding": "5px 10px"
+                ,
+                "animation": {
+                  "delay": 0,
+                  "effect": 2,
+                  "speed": "1000",
+                  "method": "0",
+                  "sequence": "1"
+                }
               }
-            },
-            {
-              "text": "Product 2",
-              "values": [
-                18
-              ],
-              "background-color": "#9688f7",
-              "border-color": "#454754",
-              "border-width": "1px",
-              "shadow": 0,
-              "tooltip": {
-                "background-color": "#796bdd",
-                "font-color": "#ffffff",
-                "border-radius": "6px",
-                "shadow": false,
-                "padding": "5px 10px"
-              }
-            },
-            {
-              "text": "Product 3",
-              "values": [
-                20
-              ],
-              "background-color": "#b659b4",
-              "border-color": "#454754",
-              "border-width": "1px",
-              "shadow": 0,
-              "tooltip": {
-                "background-color": "#a03f9c",
-                "font-color": "#ffffff",
-                "border-radius": "6px",
-                "shadow": false,
-                "padding": "5px 10px"
-              }
-            },
-            {
-              "text": "Product 4",
-              "values": [
-                16
-              ],
-              "background-color": "#3bbcfc",
-              "border-color": "#454754",
-              "border-width": "1px",
-              "shadow": 0,
-              "tooltip": {
-                "background-color": "#1b9ede",
-                "font-color": "#ffffff",
-                "border-radius": "6px",
-                "shadow": false,
-                "padding": "5px 10px"
-              }
-            },
-            {
-              "text": "Product 5",
-              "values": [
-                21
-              ],
-              "background-color": "#6597a2",
-              "border-color": "#454754",
-              "border-width": "1px",
-              "shadow": 0,
-              "tooltip": {
-                "background-color": "#2f6672",
-                "font-color": "#ffffff",
-                "border-radius": "6px",
-                "shadow": false,
-                "padding": "5px 10px"
+              ,
+              ring: {
+                size: 20,
+                rules: [
+                  {
+                    rule: '%v <= 40',
+                    backgroundColor: '#fe6c00'
+                  },
+                  {
+                    rule: '%v > 40 && %v < 64',
+                    backgroundColor: '#ffc91c'
+                  },
+                  {
+                    rule: '%v >= 64',
+                    backgroundColor: '#18aa4a'
+                  }
+                ]
               }
             }
-          ]
-        },
-        {
-          "type": "bar",
-          "width": "100%",
-          "background-color": "white",
-          "border-bottom": "8px solid #565867",
-          "plot": {
-            "bar-space": "10px",
-            "animation": {
-              "delay": 0,
-              "effect": 4,
-              "speed": "1000",
-              "method": "0",
-              "sequence": "0"
+            ,
+            "plot": {
+              "csize": "5%",
+              "size": "100%",
+              "background-color": "#000000"
             }
-          },
-          "plotarea": {
-            "margin": "45px 30px 40px 65px"
-          },
-          "scale-x": {
-            "values": [
-              "Jan",
-              "Feb",
-              "Mar",
-              "Apr",
-              "May",
-              "Jun",
-              "Jul",
-              "Aug",
-              "Sep",
-              "Oct",
-              "Nov",
-              "Dec"
+            ,
+            "series": [
+              {
+                "values": [83]
+              }
             ],
-            "line-color": "#55717c",
-            "offset-y": "4px",
-            "tick": {
-              "size": "5px",
-              "line-color": "#55717c",
-              "line-width": "1px",
-              "visible": false
-            },
-            "guide": {
-              "visible": false
-            },
-            "item": {
-              "font-size": "10px",
-              "font-family": "Arial",
-              "font-color": "#c0c0c0"
-            }
+            labels: [{
+              id: 'score',
+              text: '3.0M',
+              x: '50%',
+              y: '70%',
+              anchor: 'c',
+              fontSize: 25
+            }]
           },
-          "scale-y": {
-            "line-color": "none",
-            "values": "0:50000:10000",
-            "multiplier": true,
-            "guide": {
-              "line-style": "solid",
-              "line-color": "#5e606c",
-              "alpha": 1
-            },
-            "tick": {
-              "visible": false
-            },
-            "label": {
-              "text": "Sales by Employee",
-              "offset-x": "-5px",
-              "font-size": "11px",
-              "font-family": "Arial",
-              "font-color": "#ffffff",
-              "font-weight": "normal"
-            },
-            "item": {
-              "padding-left": "2px",
-              "font-size": "10px",
-              "font-family": "Arial",
-              "font-color": "#c0c0c0"
+          {
+            backgroundColor: "#fff",
+            globals: {
+              shadow: false,
+              fontFamily: "Helvetica"
             }
-          },
-          "series": [
-            {
-              "values": [
-                31000,
-                39500,
-                24300,
-                36000,
-                38000,
-                45500,
-                28500,
-                38000,
-                21000,
-                17000,
-                24000,
-                17500
-              ],
-              "background-color": "#57dde8",
-              "tooltip": {
-                "background-color": "#54ced4",
-                "font-color": "#454754",
-                "border-radius": "6px",
-                "shadow": false,
-                "padding": "5px 10px"
+            ,
+            type: "area",
+            "width": "50%",
+            title: {
+              text: "Average Win Rate",
+              fontColor: "#5f5f5f",
+              backgroundColor: "transparent",
+              textAlign: "center",
+              padding: "0px 15px",
+              fontSize: "14px"
+            }
+            ,
+            scaleX: {
+              visible: false
+            }
+            ,
+            scaleY: {
+              visible: false,
+              "max-value": 10,
+            }
+            ,
+            tooltip: {
+              visible: false
+            }
+            ,
+            plot: {
+              "contour-on-top": false,
+              alphaArea: 1,
+              lineWidth: "2px",
+              aspect: "spline",
+              marker: {
+                visible: false
               }
-            },
-            {
-              "values": [
-                11500,
-                36750,
-                7000,
-                44500,
-                11500,
-                28450,
-                42900,
-                26750,
-                13050,
-                32600,
-                12500,
-                14300
-              ],
-              "background-color": "#978af6",
-              "tooltip": {
-                "background-color": "#796bdd",
-                "font-color": "#ffffff",
-                "border-radius": "6px",
-                "shadow": false,
-                "padding": "5px 10px"
-              }
-            },
-            {
-              "values": [
-                21500,
-                29550,
-                14500,
-                16500,
-                28450,
-                35600,
-                21550,
-                18750,
-                11600,
-                7500,
-                14750,
-                16000
-              ],
-              "background-color": "#b857b4",
-              "tooltip": {
-                "background-color": "#a03f9c",
-                "font-color": "#ffffff",
-                "border-radius": "6px",
-                "shadow": false,
-                "padding": "5px 10px"
+              ,
+              animation: {
+                delay: 500,
+                effect: "ANIMATION_SLIDE_TOP",
+                speed: 700,
+                method: 0,
+                sequence: 1
               }
             }
-          ]
-        }
-      ]
-    };
+            ,
+            series: [
+              {
+                text: "All Sites",
+                values: this.getAverageWinRate(),
+                backgroundColor1: "#978af6",
+                backgroundColor2: "#978af6",
+                lineColor: "#978af6"
+              }
+            ]
+          }
+          ,
+          {
+            "type": "pie",
+            "width": "50%",
+            "background-color": "#ffffff",
+            "border-radius": 4,
+            title: {
+              text: "Shipments",
+              fontColor: "#5f5f5f",
+              backgroundColor: "transparent",
+              textAlign: "center",
+              padding: "0px 15px",
+              fontSize: "14px"
+            }
+            ,
+            "value-box": {
+              "visible": true
+            }
+            ,
+            "plotarea": {
+              "margin": "20% 0% 0% 0%"
+            }
+            ,
+            "plot": {
+              "slice": 50,
+              "ref-angle": 225,
+              "detach": false,
+              "hover-state": {
+                "visible": false
+              }
+              ,
+              "value-box": {
+                "visible": true,
+                "type": "first",
+                "connected": false,
+                "placement": "center",
+                "text": "0.2M",
+                "rules": [
+                  {
+                    "rule": "%v < 3850",
+                    "visible": false
+                  }
+                ],
+                "font-color": "#000000",
+                "font-size": "20px"
+              }
+              ,
+              "tooltip": {
+                "rules": [
+                  {
+                    "rule": "%i == 0",
+                    "text": "%v %t ",
+                    "shadow": false,
+                    "border-radius": 4
+                  },
+                  {
+                    "rule": "%i == 1",
+                    "text": "%v",
+                    "shadow": false,
+                    "border-radius": 4
+                  }
+                ]
+              }
+              ,
+              "animation": {
+                "delay": 0,
+                "effect": 2,
+                "speed": "600",
+                "method": "0",
+                "sequence": "1"
+              }
+            }
+            ,
+            "series": [
+              {
+                "values": [3852],
+                "text": "Shipped",
+                "background-color": "#18aa4a",
+                "border-width": "0px",
+                "shadow": 0
+              },
+              {
+                "values": [1148],
+                "text": "In-transit",
+                "background-color": "#53bbd4",
+                "border-color": "#dadada",
+                "border-width": "1px",
+                "shadow": 0
+              }, {
+                "values": [1148],
+                "background-color": "#ffc91c",
+                "text": "Late",
+                "border-color": "#dadada",
+                "border-width": "1px",
+                "shadow": 0
+              }, {
+                "values": [200],
+                "background-color": "#fe6c00",
+                "text": "Cancelled",
+                "border-color": "#dadada",
+                "border-width": "1px",
+                "shadow": 0
+              }
+            ]
+          }
+          ,
+          {
+            "type": "area",
+            "background-color": "#fff",
+            "width": "50%",
+            "utc": true,
+            title: {
+              text: "Revenue Attainment",
+              fontColor: "#5f5f5f",
+              backgroundColor: "transparent",
+              textAlign: "center",
+              padding: "0px 15px",
+              fontSize: "14px"
+            }
+            ,
+            "plotarea": {
+              "margin-top": "10%",
+              "margin-right": "dynamic",
+              "margin-bottom": "dynamic",
+              "margin-left": "dynamic",
+              "adjust-layout": true
+            }
+            ,
+            "labels": [
+              {
+                "text": "98%",
+                "default-value": "",
+                "color": "#5f5f5f",
+                "x": "20%",
+                "y": 50,
+                "width": 50,
+                "text-align": "left",
+                "bold": 0,
+                "font-size": "24px",
+                "font-weight": "bold"
+              },
+              {
+                "text": "of Quota",
+                "default-value": "",
+                "color": "#5f5f5f",
+                "x": "40%",
+                "y": 50,
+                "width": 120,
+                "text-align": "left",
+                "bold": 0,
+                "font-size": "14px",
+                "font-weight": "bold"
+              }
+            ],
+            "scale-x": {
+              visible: false
+            }
+            ,
+            "crosshair-x": {
+              "line-color": "#fff",
+              "line-width": 1,
+              "plot-label": {
+                "visible": false
+              }
+            }
+            ,
+            "scale-y": {
+              "min-value": 800,
+              "max-value": 4000,
+              visible: false
+            }
+            ,
+            "plot": {
+              "line-width": 2,
+              "marker": {
+                "size": 1,
+                "visible": false
+              }
+              ,
+              "tooltip": {
+                "font-family": "Roboto",
+                "font-size": "15px",
+                "text": "There were %v %t on %data-days",
+                "text-align": "left",
+                "border-radius": 5,
+                "padding": 10
+              }
+              ,
+              "animation": {
+                "delay": 0,
+                "effect": 4,
+                "speed": "1000",
+                "method": "0",
+                "sequence": "0"
 
-    zingchart.render({
-      id: 'chart-revenue-realized-dashboard',
-      data: myConfig,
-      height: 400,
-      width: "100%"
-    });
+              }
+            }
+            ,
+            "series": [
+              {
+                "values": [
+                  1204,
+                  1179,
+                  1146,
+                  1182,
+                  1058,
+                  1086,
+                  1141,
+                  1105,
+                  1202,
+                  992,
+                  1200,
+                  1350
+                ],
+                "data-days": [
+                  "Sept 19",
+                  "Sept 20",
+                  "Sept 21",
+                  "Sept 22",
+                  "Sept 23",
+                  "Sept 24",
+                  "Sept 25",
+                  "Sept 26",
+                  "Sept 27",
+                  "Sept 28",
+                  "Sept 29",
+                  "Sept 30"
+                ],
+                "line-color": "#fc8d62",
+                "aspect": "spline",
+                "background-color": "#fc8d62",
+                "alpha-area": ".3",
+                "font-family": "Roboto",
+                "font-size": "14px",
+                "text": "returns"
+              }
+            ]
+          }
+        ]
+      }
+      ;
 
+    zingchart
+      .render({
+        id: 'chart-revenue-realized-dashboard',
+        data: myConfig,
+        height: 400,
+        width: "100%"
+      });
   }
+}
