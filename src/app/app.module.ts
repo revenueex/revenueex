@@ -10,6 +10,8 @@ import {RevenueTrendComponent} from "./dashboard/revenue-trend/revenue-trend.com
 import { ForecastOrderGapComponent } from './dashboard/forecast-order-gap/forecast-order-gap.component';
 import { RevenueRealizedComponent } from './dashboard/revenue-realized/revenue-realized.component';
 import { RevenueRealizationRateComponent } from './dashboard/revenue-realization-rate/revenue-realization-rate.component';
+import { TopOpportunitiesComponent } from './dashboard/top-opportunities/top-opportunities.component';
+import { RecommendationsComponent } from './dashboard/recommendations/recommendations.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { RevenueRealizationRateComponent } from './dashboard/revenue-realization
     RevenueTrendComponent,
     ForecastOrderGapComponent,
     RevenueRealizedComponent,
-    RevenueRealizationRateComponent
+    RevenueRealizationRateComponent,
+    TopOpportunitiesComponent,
+    RecommendationsComponent
   ],
   imports: [
     BrowserModule,

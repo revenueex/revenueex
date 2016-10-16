@@ -1,0 +1,37 @@
+<div class="slds-text-heading--medium" style="margin-left: 10px">Top Opportunities</div>
+<div class="slds-panel slds-grid slds-grid--vertical slds-nowrap" style="margin: 6px;padding: 10px; ">
+  <article class="slds-card slds-card--narrow slds-card-alert"
+           *ngFor="let opp of topOpptunities; let i = index;">
+    <div class="slds-card__body">
+      <div class="slds-card__body--inner">
+        <div class="slds-tile">
+          <h3 class="slds-truncate" title="Related Record Title 1"><a href="javascript:void(0);">{{i+1}}.
+            {{opp.customer}}</a>
+          </h3>
+          <div class="slds-tile__detail slds-text-body--small">
+            <table>
+              <tr>
+                <td><span>Planned : {{opp.planned | currency:'USD':true}}</span></td>
+                <td><span>Ordered : {{opp.ordered | currency:'USD':true}}</span></td>
+                <td><span>Shipped : {{opp.shipped | currency:'USD':true}}</span></td>
+                <td><span>Gap : {{opp.gap | currency:'USD':true}}</span></td>
+              </tr>
+              <tr style="font-weight:bold">
+                <td>
+                  Gap : {{opp.totalGap | currency:'USD':true}}
+                </td>
+                <td>
+                  Contribution : {{opp.contribution | percent}}
+                </td>
+                <td colspan="2">
+                  Revenue Acceleration : {{opp.revenueAcceleration | currency:'USD':true}}
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+

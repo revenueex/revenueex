@@ -38617,3 +38617,7 @@ a.uiButton--inverse:focus {
 .slds-icon-text-success {
   fill: rgb(4, 132, 75)
 }
+
+.slds-card-alert {
+  border-color: #fe6c00
+}
