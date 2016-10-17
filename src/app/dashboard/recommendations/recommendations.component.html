@@ -1,3 +1,42 @@
-<p>
-  recommendations works!
-</p>
+<div class="slds-text-heading--medium" style="margin-left: 10px">Recommendations</div>
+<div class="slds-panel slds-grid slds-grid--vertical slds-nowrap" style="margin: 6px;padding: 10px; ">
+  <article class="slds-card"
+           *ngFor=" let recommendation of recommendations">
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media--center slds-has-flexi-truncate">
+        <span class="slds-icon_container slds-icon_container--circle slds-icon-action-{{recommendation.action}}"
+              title="description of icon when needed">
+        <svg aria-hidden="true" class="slds-icon slds-icon--small">
+            <use *ngIf="recommendation.action === 'email'"
+                 xlink:href="/assets/icons/action-sprite/svg/symbols.svg#email"></use>
+            <use *ngIf="recommendation.action === 'call'"
+                 xlink:href="/assets/icons/action-sprite/svg/symbols.svg#call"></use>
+          </svg>
+          <span class="slds-assistive-text">Description of icon</span>
+        </span>
+        <div class="slds-media__body slds-truncate">
+          <h2>
+            <a href="javascript:void(0);" class="slds-text-link--reset">
+              <span class="slds-text-heading--small slds-m-left--large">{{recommendation.customer}}</span>
+            </a>
+          </h2>
+        </div>
+      </header>
+    </div>
+    <div class="slds-card__body" *ngFor="let solution of recommendation.solutions">
+      <div class="slds-tile slds-media">
+        <div class="slds-media__figure">
+          <label class="slds-checkbox">
+            <input type="checkbox" name="options" id="checkbox-01"/>
+            <span class="slds-checkbox--faux"></span>
+            <span class="slds-form-element__label slds-assistive-text">{{solution}}</span>
+          </label>
+        </div>
+        <div class="slds-media__body">
+          <h3 class="slds-truncate">{{solution}}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="slds-card__footer">{{recommendation.ago}}</div>
+  </article>
+</div>
