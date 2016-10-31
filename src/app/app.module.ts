@@ -7,11 +7,13 @@ import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard/dashboard.component";
 import {RevenueexRoutingModule} from "./app-routing.module";
 import {RevenueTrendComponent} from "./dashboard/revenue-trend/revenue-trend.component";
-import { ForecastOrderGapComponent } from './dashboard/forecast-order-gap/forecast-order-gap.component';
-import { RevenueRealizedComponent } from './dashboard/revenue-realized/revenue-realized.component';
-import { RevenueRealizationRateComponent } from './dashboard/revenue-realization-rate/revenue-realization-rate.component';
-import { TopOpportunitiesComponent } from './dashboard/top-opportunities/top-opportunities.component';
-import { RecommendationsComponent } from './dashboard/recommendations/recommendations.component';
+import {ForecastOrderGapComponent} from "./dashboard/forecast-order-gap/forecast-order-gap.component";
+import {RevenueRealizedComponent} from "./dashboard/revenue-realized/revenue-realized.component";
+import {RevenueRealizationRateComponent} from "./dashboard/revenue-realization-rate/revenue-realization-rate.component";
+import {TopOpportunitiesComponent} from "./dashboard/top-opportunities/top-opportunities.component";
+import {RecommendationsComponent} from "./dashboard/recommendations/recommendations.component";
+import {CustomerDashboardComponent} from "./customer-dashboard/customer-dashboard.component";
+import { CustomerChartComponent } from './customer-dashboard/customer-chart/customer-chart.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { RecommendationsComponent } from './dashboard/recommendations/recommenda
     RevenueRealizedComponent,
     RevenueRealizationRateComponent,
     TopOpportunitiesComponent,
-    RecommendationsComponent
+    RecommendationsComponent,
+    CustomerDashboardComponent,
+    CustomerChartComponent
   ],
   imports: [
     BrowserModule,

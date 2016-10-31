@@ -1,4 +1,5 @@
 import {Component, OnInit} from "@angular/core";
+import {Router} from "@angular/router";
 
 
 declare var zingchart: any;
@@ -10,7 +11,7 @@ declare var zingchart: any;
 })
 export class ForecastOrderGapComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -18,6 +19,9 @@ export class ForecastOrderGapComponent implements OnInit {
         "type": "hbar",
         "plot": {
           "stacked": true,
+          "hover-state": {
+            "alpha": 0.8
+          },
           "animation": {
             'method': 'LINEAR',
             'delay': 0,
@@ -73,8 +77,7 @@ export class ForecastOrderGapComponent implements OnInit {
           "item": {
             "font-color": "#999"
           }
-        }
-        ,
+        },
         "scaleY": {
           "lineWidth": 0,
           "lineColor": "none",
@@ -112,10 +115,7 @@ export class ForecastOrderGapComponent implements OnInit {
             ],
             "alpha": 1,
             "text": "Forecasts",
-            "background-color": "#53bbd4",
-            "hover-state": {
-              backgroundColor: '#2956A0'
-            }
+            "background-color": "#53bbd4"
           },
           {
             "values": [
@@ -128,10 +128,7 @@ export class ForecastOrderGapComponent implements OnInit {
             "text": "Orders",
             "background-color": "#18aa4a",
             "border-radius-top-left": "3px",
-            "border-radius-top-right": "3px",
-            "hover-state": {
-              backgroundColor: '#18aa4a'
-            }
+            "border-radius-top-right": "3px"
           },
           {
             "values": [
@@ -142,10 +139,7 @@ export class ForecastOrderGapComponent implements OnInit {
             ],
             "alpha": 1,
             "text": "Gap",
-            "background-color": "#fe6c00",
-            "hover-state": {
-              backgroundColor: '#901E15'
-            }
+            "background-color": "#fe6c00"
           }
         ]
       }
@@ -156,6 +150,10 @@ export class ForecastOrderGapComponent implements OnInit {
       height: 400,
       width: '100%'
     });
+    zingchart.component = this;
+    zingchart.plot_click = function (p) {
+      this.component.router.navigate(['/customer-dashboard']);
+    }
   }
 
 }

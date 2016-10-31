@@ -1,0 +1,87 @@
+<div class="slds-grid slds-grid--vertical-align-center slds-m-top--medium ">
+  <div class="slds-col slds-p-horizontal--small slds-size--1-of-2 slds-medium-size--5-of-6 slds-large-size--8-of-12">
+    <div class="slds-text-heading--medium slds-align--absolute-center" style=" font-weight: bold;">{{customerName}}
+    </div>
+  </div>
+  <div class="slds-col">
+    <div class="slds-button-group" role="group">
+      <button class="slds-button slds-button--neutral toggle-button {{ rangeType == 0 ?  'button-pressed' : '' }}"
+              (click)="setRangeType(0)">
+        MTD
+      </button>
+      <button class="slds-button slds-button--neutral toggle-button {{ rangeType == 1 ?  'button-pressed' : '' }}"
+              (click)="setRangeType(1)">QTD
+      </button>
+      <button class="slds-button slds-button--neutral toggle-button {{ rangeType == 2 ?  'button-pressed' : '' }}"
+              (click)="setRangeType(2)">YTD
+      </button>
+    </div>
+  </div>
+  <div class="slds-col">
+    <div class="slds-button-group" role="group">
+      <button class="slds-button slds-button--icon">
+        <svg aria-hidden="true" class="slds-button__icon">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chart"></use>
+        </svg>
+        <span class="slds-assistive-text">Settings</span>
+      </button>
+      <button class="slds-button slds-button--icon slds-m-left--xx-large">
+        <svg aria-hidden="true" class="slds-button__icon">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#filterList"></use>
+        </svg>
+        <span class="slds-assistive-text">Settings</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="slds-container--medium slds-m-top--medium">
+  <div class="slds-grid slds-grid--align-space">
+    <div class="slds-col">
+      <div class="slds-text-align--center"><h3
+        class="slds-text-heading--small bottom-bar">Forecast</h3>
+      </div>
+      <div class="slds-text-align--center"><h3 class="slds-text-heading--medium">{{currentSummary.forecast}}</h3></div>
+    </div>
+    <div class="slds-col">
+      <div class="slds-text-align--center"><h3
+        class="slds-text-heading--small bottom-bar">Ordered</h3>
+      </div>
+      <div class="slds-text-align--center"><h2 class="slds-text-heading--medium">{{currentSummary.ordered}}</h2></div>
+    </div>
+    <div class="slds-col">
+      <div class="slds-text-align--center"><h3
+        class="slds-text-heading--small bottom-bar">Invoiced</h3>
+      </div>
+      <div class="slds-text-align--center"><h2 class="slds-text-heading--medium">{{currentSummary.invoiced}}</h2></div>
+    </div>
+    <div class="slds-col">
+      <div class="slds-text-align--center"><h3
+        class="slds-text-heading--small bottom-bar">Un-confirmed</h3>
+      </div>
+      <div class="slds-text-align--center"><h3 class="slds-text-heading--medium">{{currentSummary.unconfirmed}}</h3>
+      </div>
+    </div>
+    <div class="slds-col">
+    </div>
+    <div class="slds-col">
+      <div class="slds-text-align--center"><h3
+        class="slds-text-heading--small bottom-bar">At Risk</h3>
+      </div>
+      <div class="slds-text-align--center"><h3 class="slds-text-heading--medium">{{currentSummary.atrisk}}</h3></div>
+    </div>
+    <div class="slds-col">
+      <div class="slds-text-align--center"><h3
+        class="slds-text-heading--small bottom-bar">Rev Contrib</h3>
+      </div>
+      <div class="slds-text-align--center"><h3 class="slds-text-heading--medium
+      slds-text-color--alert">
+        {{currentSummary.revenuecontribution}}</h3></div>
+    </div>
+  </div>
+</div>
+<div class="slds-grid slds-wrap slds-grid--pull-padded ">
+  <div class="slds-p-horizontal--small slds-size--1-of-2 slds-medium-size--4-of-6 slds-large-size--7-of-12">
+    <app-customer-chart></app-customer-chart>
+  </div>
+
+</div>
