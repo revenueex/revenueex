@@ -15,7 +15,8 @@ export class CustomerDashboardComponent extends DashboardComponent implements On
       invoiced: '0.5M',
       unconfirmed: '0.1M',
       atrisk: '0.5M',
-      revenuecontribution: "18.3%"
+      revenuecontribution: "18.3%",
+      projectedRevenueAcceleration: "0.2M"
     }];
   customerName: string = 'Customer ABC Inc.';
   currentSummary: any = this.summaries[0];

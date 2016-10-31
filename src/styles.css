@@ -38623,5 +38623,9 @@ a.uiButton--inverse:focus {
 }
 
 .slds-text-color--alert {
-  color: #fe6c00
+  color: #ff8c30
+}
+
+.slds-text-color--error {
+  color: #c23934
 }
