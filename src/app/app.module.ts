@@ -15,6 +15,7 @@ import {RecommendationsComponent} from "./dashboard/recommendations/recommendati
 import {CustomerDashboardComponent} from "./customer-dashboard/customer-dashboard.component";
 import { CustomerChartComponent } from './customer-dashboard/customer-chart/customer-chart.component';
 import { CustomerRevenueComponent } from './customer-dashboard/customer-revenue/customer-revenue.component';
+import { ShipmentsComponent } from './dashboard/shipments/shipments.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CustomerRevenueComponent } from './customer-dashboard/customer-revenue/
     RecommendationsComponent,
     CustomerDashboardComponent,
     CustomerChartComponent,
-    CustomerRevenueComponent
+    CustomerRevenueComponent,
+    ShipmentsComponent
   ],
   imports: [
     BrowserModule,

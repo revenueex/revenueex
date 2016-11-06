@@ -38629,3 +38629,19 @@ a.uiButton--inverse:focus {
 .slds-text-color--error {
   color: #c23934
 }
+
+.revenueex-color-danger {
+  color: #fe6c00;
+}
+
+.revenueex-color-warning {
+  color: #ffc91c;
+}
+
+.revenueex-color-ontarget {
+  color: #53bbd4;
+}
+
+.revenueex-color-success {
+  color: #18aa4a;
+}

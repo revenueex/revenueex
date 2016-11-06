@@ -22,7 +22,25 @@ export class ForecastOrderGapComponent implements OnInit {
       "backgroundColor": "white",
       "plot": {
         "bars-overlap": "100%",
-        "stacked": true
+        "stacked": true,
+        "rules": [
+          {
+            "rule": "%v / %g < 0.5 ",
+            "background-color": "#fe6c00"
+          },
+          {
+            "rule": "%v/%g >= 0.5 && %v/%g < 0.75 ",
+            "background-color": "#ffc91c"
+          },
+          {
+            "rule": "%v/%g >= 0.75 && %v/%g < 0.9 ",
+            "background-color": "#53bbd4"
+          },
+          {
+            "rule": "%v / %g >= 0.9 ",
+            "background-color": "#18aa4a"
+          },
+        ]
       },
       title: {
         text: "Forecast Order Gap by Product",
@@ -81,9 +99,8 @@ export class ForecastOrderGapComponent implements OnInit {
         },
         {
           "type": "hbullet",
-          "values": [35, 42, 40, 43, 36],
+          "values": [18, 42, 30, 43, 36],
           "goals": [38, 39, 43, 35, 41],
-          "background-color": "#18aa4a",
           "stack": 2,
           "tooltip": {
             "text": "Actual: %v<br>Goal: %g",
