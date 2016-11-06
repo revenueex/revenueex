@@ -23,7 +23,8 @@ export class DashboardComponent implements OnInit {
       realized: '3.0M',
       projected: '9.1M',
       atRisk: '2.0M'
-    }]
+    }];
+
 
   //range type, month to date | quator to date | year to date
   rangeType: number = 0;
@@ -34,9 +35,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.rangeType = 0;
-    this.currentSummary = this.summaries[this.rangeType];
-    this.currentSummary.daysLeft = this.getMonthToDate();
+    this.setRangeType(0);
   }
 
   setRangeType(type: number) {
@@ -49,6 +48,10 @@ export class DashboardComponent implements OnInit {
     } else {
       this.currentSummary.daysLeft = this.getYearToDate();
     }
+    this.currentSummary.numberOfCustomers = 30;
+    this.currentSummary.numberOfProducts = 120;
+    this.currentSummary.revAccToDate = '0.35M';
+
   }
 
   private getMonthToDate() {

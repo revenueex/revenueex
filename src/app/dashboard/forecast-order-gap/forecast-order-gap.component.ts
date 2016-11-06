@@ -15,141 +15,92 @@ export class ForecastOrderGapComponent implements OnInit {
   }
 
   ngOnInit() {
-    var chartConfig = {
-        "type": "hbar",
-        "plot": {
-          "stacked": true,
+
+
+    let chartConfig = {
+      "type": "hmixed",
+      "backgroundColor": "white",
+      "plot": {
+        "bars-overlap": "100%",
+        "stacked": true
+      },
+      title: {
+        text: "Forecast Order Gap by Product",
+        fontColor: "#5f5f5f",
+        backgroundColor: "transparent",
+        textAlign: "center",
+        padding: "30px 15px",
+        fontSize: "14px"
+      },
+      "scale-x": {
+        "labels": ["Monitor", "Memory", "SSD", "Laptop", "Desktop"],
+        "guide": {
+          "visible": false
+        }
+      },
+      "scale-y": {
+        "values": "0:50:10",
+        "guide": {
+          "visible": false
+        }
+      },
+      "series": [
+        {
+          "type": "hbar",
+          "values": [25, 30, 15, 20, 25],
+          "stack": 1,
+          "background-color": "gray",
+          "alpha": 0.7,
+          "color": "red",
           "hover-state": {
-            "alpha": 0.8
+            "visible": false
           },
-          "animation": {
-            'method': 'LINEAR',
-            'delay': 0,
-            'effect': 'ANIMATION_EXPAND_VERTICAL',
-            'sequence': 'ANIMATION_BY_PLOT_AND_NODE',
-            'speed': 10
-          }
+          "max-trackers": 0
         },
-        "3d-aspect": {
-          "true3d": 0,
-          "y-angle": 10,
-          "depth": 30
-        },
-        title: {
-          text: "Forecast Order Gap",
-          fontColor: "#5f5f5f",
-          backgroundColor: "transparent",
-          textAlign: "center",
-          padding: "15px 15px",
-          fontSize: "14px"
-        },
-        "legend": {
-          "layout": "float",
-          "background-color": "none",
-          "border-color": "none",
-          "item": {
-            "font-color": "#333"
-          }
-          ,
-          "x": "20%",
-          "y": "90%",
-          "width": "90%",
-          "shadow": 0
-        },
-        "backgroundColor": "#fff",
-        "scaleX": {
-          "values": [
-            "C1",
-            "C2",
-            "C3",
-            "C4"
-          ],
-          "lineWidth": 0,
-          "lineColor": "none",
-          "tick": {
+        {
+          "type": "hbar",
+          "values": [20, 10, 30, 25, 15],
+          "stack": 1,
+          "background-color": "gray",
+          "alpha": 0.5,
+          "hover-state": {
             "visible": false
-          }
-          ,
-          "guide": {
-            "visible": false
-          }
-          ,
-          "item": {
-            "font-color": "#999"
-          }
+          },
+          "max-trackers": 0
         },
-        "scaleY": {
-          "lineWidth": 0,
-          "lineColor": "none",
-          "min-value": 0,
-          "max-value": 495,
-          "step": 123.75,
-          "tick": {
+        {
+          "type": "hbar",
+          "values": [5, 10, 5, 5, 10],
+          "stack": 1,
+          "background-color": "gray",
+          "alpha": 0.3,
+          "hover-state": {
             "visible": false
-          }
-          ,
-          "guide": {
-            "lineStyle": "solid"
-          }
-          ,
-          "item": {
-            "font-color": "#999"
+          },
+          "max-trackers": 0
+        },
+        {
+          "type": "hbullet",
+          "values": [35, 42, 40, 43, 36],
+          "goals": [38, 39, 43, 35, 41],
+          "background-color": "#18aa4a",
+          "stack": 2,
+          "tooltip": {
+            "text": "Actual: %v<br>Goal: %g",
+            "font-color": "black",
+            "background-color": "white"
           }
         }
-        ,
-        "tooltip": {
-          "htmlMode": true,
-          "backgroundColor": "none",
-          "padding": 0,
-          "placement": "node:center",
-          "text": "<div class='zingchart-tooltip'><div class='scalex-value'>%kt<\/div><div class='scaley-value'>$%v<\/div><\/div>"
-        }
-        ,
-        "series": [
-          {
-            "values": [
-              100,
-              180,
-              120,
-              120
-            ],
-            "alpha": 1,
-            "text": "Forecasts",
-            "background-color": "#53bbd4"
-          },
-          {
-            "values": [
-              125,
-              145,
-              135,
-              165
-            ],
-            "alpha": 1,
-            "text": "Orders",
-            "background-color": "#18aa4a",
-            "border-radius-top-left": "3px",
-            "border-radius-top-right": "3px"
-          },
-          {
-            "values": [
-              125,
-              125,
-              125,
-              125
-            ],
-            "alpha": 1,
-            "text": "Gap",
-            "background-color": "#fe6c00"
-          }
-        ]
-      }
-      ;
+      ]
+    };
+
     zingchart.render({
       id: 'chart-forecast-order-gap-dashboard',
       data: chartConfig,
-      height: 400,
+      height: 300,
       width: '100%'
     });
+
     zingchart.component = this;
     zingchart.plot_click = function (p) {
       this.component.router.navigate(['/customer-dashboard']);

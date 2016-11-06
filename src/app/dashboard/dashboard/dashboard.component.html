@@ -33,7 +33,7 @@
     </div>
   </div>
 </div>
-<div class="slds-container--small slds-m-top--medium">
+<div class="slds-container--x-large slds-m-top--medium">
   <div class="slds-grid slds-grid--align-space">
     <div class="slds-col">
       <div class="slds-text-align--center"><h3
@@ -65,22 +65,44 @@
       </div>
       <div class="slds-text-align--center"><h3 class="slds-text-heading--medium">{{currentSummary.daysLeft}}</h3></div>
     </div>
+    <div class="slds-col">
+      <div class="slds-text-align--center"><h3
+        class="slds-text-heading--small bottom-bar">Acceleration To Date </h3>
+      </div>
+      <div class="slds-text-align--center"><h3 class="slds-text-heading--medium">{{currentSummary.revAccToDate}}</h3>
+      </div>
+    </div>
+    <div class="slds-col">
+      <div class="slds-text-align--center"><h3
+        class="slds-text-heading--small bottom-bar">Customers</h3>
+      </div>
+      <div class="slds-text-align--center"><h3 class="slds-text-heading--medium">
+        {{currentSummary.numberOfCustomers}}</h3></div>
+    </div>
+    <div class="slds-col">
+      <div class="slds-text-align--center"><h3
+        class="slds-text-heading--small bottom-bar">Products</h3>
+      </div>
+      <div class="slds-text-align--center"><h3 class="slds-text-heading--medium">
+        {{currentSummary.numberOfProducts}}</h3></div>
+    </div>
   </div>
 </div>
 <div class="slds-grid slds-wrap slds-grid--pull-padded ">
-  <div class="slds-p-horizontal--small slds-size--1-of-2 slds-medium-size--4-of-6 slds-large-size--7-of-12">
+  <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--6-of-12">
     <app-revenue-trend></app-revenue-trend>
   </div>
-  <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--2-of-6 slds-large-size--5-of-12">
+  <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--6-of-12">
     <app-revenue-realized></app-revenue-realized>
   </div>
 </div>
 <div class="slds-grid slds-wrap slds-grid--pull-padded slds-m-top--medium">
-  <div class="slds-p-horizontal--small slds-size--1-of-2 slds-medium-size--4-of-6 slds-large-size--8-of-12">
+  <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--9-of-12">
     <app-recommendations></app-recommendations>
   </div>
-  <div class="slds-p-horizontal--small slds-size--1-of-2 slds-medium-size--2-of-6 slds-large-size--4-of-12">
-    <div></div>
+  <div class="slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--3-of-12">
+    <app-shipments></app-shipments>
+    <app-forecast-order-gap></app-forecast-order-gap>
   </div>
 </div>
 
